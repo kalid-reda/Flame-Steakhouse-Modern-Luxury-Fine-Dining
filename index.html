@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Flame Steakhouse - Luxury Fine Dining and Dry-Aged Beef.">
+  <title>Flame Steakhouse | Modern Luxury Fine Dining</title>
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="icon" type="image/png" href="assets/imgs/icon.png">
+</head>
+<body>
+
+  <div id="scroll-progress"></div>
+
+  <header>
+    <nav class="navbar" id="navbar">
+      <a href="index.html" class="nav-brand">FLAME<span>.</span></a>
+      <ul class="nav-links">
+        <li><a href="index.html" class="nav-link active" data-i18n="nav_home">Home</a></li>
+        <li><a href="about.html" class="nav-link" data-i18n="nav_about">About</a></li>
+        <li><a href="menu.html" class="nav-link" data-i18n="nav_menu">Menu</a></li>
+        <li><a href="reservation.html" class="nav-link" data-i18n="nav_reservation">Reservation</a></li>
+        <li><a href="gallery.html" class="nav-link" data-i18n="nav_gallery">Gallery</a></li>
+        <li><a href="contact.html" class="nav-link" data-i18n="nav_contact">Contact</a></li>
+        <li><a href="reservation.html" class="btn-primary" data-i18n="btn_book">Book Table</a></li>
+        <li><button id="lang-btn" class="lang-btn">العربية</button></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section style="height: 100vh; display: flex; align-items: center; padding: 0 5%; background: linear-gradient(rgba(15,15,15,0.75), #0F0F0F), url('https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=1920&q=80') center/cover no-repeat;">
+    <div style="max-width: 750px;">
+      <h4 style="color: var(--secondary); letter-spacing: 3px; font-weight: 600; margin-bottom: 1rem;" data-i18n="hero_sub">EXQUISITE FINE DINING</h4>
+      <h1 style="font-size: 3.8rem; line-height: 1.1; margin-bottom: 1.5rem;" data-i18n="hero_title">Where Precision Meets Embers</h1>
+      <p style="color: var(--text-muted); font-size: 1.1rem; margin-bottom: 2rem;" data-i18n="hero_desc">Experience dry-aged prime cuts and artisanal gastronomy prepared over natural wood fires.</p>
+      <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+        <a href="reservation.html" class="btn-primary" data-i18n="btn_book">Book Table</a>
+        <a href="menu.html" class="btn-primary" style="background: transparent; border: 1px solid var(--glass-border);" data-i18n="btn_explore">Explore Menu</a>
+      </div>
+    </div>
+  </section>
+
+  <section style="padding: 6rem 5%;">
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 4rem; align-items: center;">
+      <div>
+        <h4 style="color: var(--secondary); letter-spacing: 2px; margin-bottom: 0.5rem;" data-i18n="sec_story_sub">OUR HERITAGE</h4>
+        <h2 style="font-size: 2.5rem; margin-bottom: 1.5rem;" data-i18n="sec_story_title">Crafting Perfection Since 2008</h2>
+        <p style="color: var(--text-muted); margin-bottom: 1.5rem;" data-i18n="sec_story_desc1">At Flame Steakhouse, grilling isn't just a cooking method—it's an ancient ritual refined through modern techniques. Every cut is hand-selected from sustainable, ethical farms.</p>
+        <p style="color: var(--text-muted); margin-bottom: 2rem;" data-i18n="sec_story_desc2">Aged in our custom Himalayan salt chambers for up to 60 days, our beef develops an extraordinary depth of flavor and tender texture.</p>
+        <a href="about.html" class="btn-primary" data-i18n="btn_read_more">Discover Our Story</a>
+      </div>
+      <div class="glass-card" style="padding: 0.5rem; position: relative;">
+        <img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=800&q=80" alt="Restaurant Interior" style="border-radius: var(--radius-sm); width: 100%; height: 400px; object-fit: cover;">
+      </div>
+    </div>
+  </section>
+
+  <section style="padding: 6rem 5%; background: rgba(255,255,255,0.01);">
+    <div class="section-title">
+      <h4 data-i18n="why_sub">THE FLAME DIFFERENCE</h4>
+      <h2 data-i18n="why_title">Why Dining With Us Is Exceptional</h2>
+    </div>
+
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem;">
+      <div class="glass-card" style="text-align: center;">
+        <div style="font-size: 2.5rem; color: var(--secondary); margin-bottom: 1rem;">🥩</div>
+        <h3 style="margin-bottom: 1rem;" data-i18n="why_1_title">Prime Ingredients</h3>
+        <p style="color: var(--text-muted); font-size: 0.9rem;" data-i18n="why_1_desc">Ethically sourced A5 Wagyu and Black Angus certified beef.</p>
+      </div>
+
+      <div class="glass-card" style="text-align: center;">
+        <div style="font-size: 2.5rem; color: var(--secondary); margin-bottom: 1rem;">🔥</div>
+        <h3 style="margin-bottom: 1rem;" data-i18n="why_2_title">Wood-Fired Precision</h3>
+        <p style="color: var(--text-muted); font-size: 0.9rem;" data-i18n="why_2_desc">Seared over natural white oak and hickory embers for smoky perfection.</p>
+      </div>
+
+      <div class="glass-card" style="text-align: center;">
+        <div style="font-size: 2.5rem; color: var(--secondary); margin-bottom: 1rem;">🍷</div>
+        <h3 style="margin-bottom: 1rem;" data-i18n="why_3_title">Master Sommelier Pairing</h3>
+        <p style="color: var(--text-muted); font-size: 0.9rem;" data-i18n="why_3_desc">Exclusive collection of rare vintage drinks curated to match your cut.</p>
+      </div>
+    </div>
+  </section>
+
+  <section style="padding: 6rem 5%;">
+    <div class="section-title">
+      <h4 data-i18n="sec_highlights">Chef's Selection</h4>
+      <h2 data-i18n="sec_featured">Featured Creations</h2>
+    </div>
+
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
+      <article class="glass-card">
+        <img src="https://images.unsplash.com/photo-1558030006-450675393462?auto=format&fit=crop&w=600&q=80" alt="A5 Japanese Wagyu" style="border-radius: var(--radius-sm); height: 220px; width: 100%; object-fit: cover; margin-bottom: 1.5rem;">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
+          <h3>A5 Japanese Wagyu</h3>
+          <span style="color: var(--secondary); font-weight: 700;">$180</span>
+        </div>
+        <p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 1.5rem;">Miyazaki Prefecture A5 Wagyu with rich marbling, grilled over oak embers.</p>
+        <a href="dish.html?id=wagyu-steak" class="btn-primary" style="width: 100%; justify-content: center;">View Details</a>
+      </article>
+
+      <article class="glass-card">
+        <img src="https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=600&q=80" alt="Tomahawk Ribeye" style="border-radius: var(--radius-sm); height: 220px; width: 100%; object-fit: cover; margin-bottom: 1.5rem;">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
+          <h3>Dry-Aged Tomahawk</h3>
+          <span style="color: var(--secondary); font-weight: 700;">$145</span>
+        </div>
+        <p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 1.5rem;">45-day dry-aged Australian ribeye served on the bone.</p>
+        <a href="dish.html?id=tomahawk-ribeye" class="btn-primary" style="width: 100%; justify-content: center;">View Details</a>
+      </article>
+
+      <article class="glass-card">
+        <img src="https://images.unsplash.com/photo-1519708227418-c8fd9a32b7a2?auto=format&fit=crop&w=600&q=80" alt="Atlantic Lobster Thermidor" style="border-radius: var(--radius-sm); height: 220px; width: 100%; object-fit: cover; margin-bottom: 1.5rem;">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
+          <h3>Atlantic Lobster Thermidor</h3>
+          <span style="color: var(--secondary); font-weight: 700;">$95</span>
+        </div>
+        <p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 1.5rem;">Whole wild-caught lobster baked with rich cognac mushroom cream.</p>
+        <a href="dish.html?id=lobster-thermidor" class="btn-primary" style="width: 100%; justify-content: center;">View Details</a>
+      </article>
+    </div>
+  </section>
+
+  <section style="padding: 4rem 5%; background: rgba(214, 40, 40, 0.05); border-y: 1px solid var(--glass-border);">
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 2rem; text-align: center;">
+      <div>
+        <h2 style="font-size: 3rem; color: var(--primary);">15,000+</h2>
+        <p style="color: var(--text-muted);" data-i18n="stat_1">Happy Guests</p>
+      </div>
+      <div>
+        <h2 style="font-size: 3rem; color: var(--secondary);">45</h2>
+        <p style="color: var(--text-muted);" data-i18n="stat_2">Days Aged Beef</p>
+      </div>
+      <div>
+        <h2 style="font-size: 3rem; color: var(--primary);">18</h2>
+        <p style="color: var(--text-muted);" data-i18n="stat_3">Culinary Awards</p>
+      </div>
+      <div>
+        <h2 style="font-size: 3rem; color: var(--secondary);">100%</h2>
+        <p style="color: var(--text-muted);" data-i18n="stat_4">Organic Ingredients</p>
+      </div>
+    </div>
+  </section>
+
+  <section style="padding: 6rem 5%;">
+    <div class="glass-card" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 3rem; align-items: center;">
+      <img src="https://images.unsplash.com/photo-1577219491135-ce391730fb2c?auto=format&fit=crop&w=600&q=80" alt="Executive Chef" style="border-radius: var(--radius-sm); width: 100%; height: 380px; object-fit: cover;">
+      <div>
+        <h4 style="color: var(--secondary); letter-spacing: 2px;" data-i18n="chef_sub">MASTER OF EMBERS</h4>
+        <h2 style="font-size: 2.2rem; margin: 0.5rem 0 1.5rem;">Chef Marco Rossi</h2>
+        <p style="color: var(--text-muted); margin-bottom: 1.5rem;" data-i18n="chef_desc">"Cooking over open flame requires listening to the sizzle, understanding the wood, and respecting the cut. Fire doesn't just cook—it transforms."</p>
+        <span style="display: block; font-weight: 600; color: var(--primary);" data-i18n="chef_role">Executive Head Chef & Founder</span>
+      </div>
+    </div>
+  </section>
+
+  <section style="padding: 6rem 5%; background: rgba(255,255,255,0.01);">
+    <div class="section-title">
+      <h4 data-i18n="test_sub">REVIEWS</h4>
+      <h2 data-i18n="test_title">What Our Guests Say</h2>
+    </div>
+
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
+      <div class="glass-card">
+        <div style="color: var(--star-color); margin-bottom: 1rem;">★★★★★</div>
+        <p style="color: var(--text-muted); font-style: italic; margin-bottom: 1.5rem;" data-i18n="test_1_text">"The Wagyu A5 literally melted on my tongue. Hands down the best steakhouse experience in the city!"</p>
+        <strong>- Alexander Wright</strong>
+      </div>
+
+      <div class="glass-card">
+        <div style="color: var(--star-color); margin-bottom: 1rem;">★★★★★</div>
+        <p style="color: var(--text-muted); font-style: italic; margin-bottom: 1.5rem;" data-i18n="test_2_text">"Unbelievable atmosphere, seamless service, and a wine list that compliments every single cut."</p>
+        <strong>- Sophia Martinez</strong>
+      </div>
+    </div>
+  </section>
+
+  <section style="padding: 5rem 5%; text-align: center; max-width: 800px; margin: 0 auto;">
+    <div class="glass-card">
+      <h2 style="margin-bottom: 1rem;" data-i18n="news_title">Join The Culinary Club</h2>
+      <p style="color: var(--text-muted); margin-bottom: 2rem;" data-i18n="news_desc">Subscribe to receive secret menu releases, special event invitations, and chef recipes.</p>
+      <form style="display: flex; gap: 0.5rem; flex-wrap: wrap;" onsubmit="event.preventDefault(); showModal('Subscribed!', 'Thank you for joining our exclusive club.'); this.reset();">
+        <input type="email" class="form-input" placeholder="Enter your email address" required style="flex: 1; min-width: 250px;">
+        <button type="submit" class="btn-primary" data-i18n="btn_subscribe">Subscribe</button>
+      </form>
+    </div>
+  </section>
+
+  <button id="back-to-top" aria-label="Back to top">↑</button>
+
+  <footer>
+    <div class="footer-bottom">
+      <p>&copy; 2026 Flame Steakhouse. All Rights Reserved.
+        <br><a href="https://www.facebook.com/share/1Lwmq1GfqW/" target="_blank">Developed by Codexa™</a>
+      </p>
+    </div>
+  </footer>
+
+  <script src="assets/js/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Explore the full menu of Flame Steakhouse - Prime Cuts, Seafood & Fine Desserts.">
+  <title>Menu | Flame Steakhouse</title>
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+  <div id="scroll-progress"></div>
+
+  <header>
+    <nav class="navbar" id="navbar">
+      <a href="index.html" class="nav-brand">FLAME<span>.</span></a>
+      <ul class="nav-links">
+        <li><a href="index.html" class="nav-link" data-i18n="nav_home">Home</a></li>
+        <li><a href="about.html" class="nav-link" data-i18n="nav_about">About</a></li>
+        <li><a href="menu.html" class="nav-link active" data-i18n="nav_menu">Menu</a></li>
+        <li><a href="reservation.html" class="nav-link" data-i18n="nav_reservation">Reservation</a></li>
+        <li><a href="gallery.html" class="nav-link" data-i18n="nav_gallery">Gallery</a></li>
+        <li><a href="contact.html" class="nav-link" data-i18n="nav_contact">Contact</a></li>
+        <li><a href="reservation.html" class="btn-primary" data-i18n="btn_book">Book Table</a></li>
+        <li><button id="lang-btn" class="lang-btn">العربية</button></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main style="padding: 140px 5% 5rem;">
+    <div class="section-title">
+      <h4 data-i18n="sec_highlights">Chef's Selection</h4>
+      <h2 data-i18n="nav_menu">Our Full Menu</h2>
+    </div>
+
+    <div style="max-width: 800px; margin: 0 auto 3rem;">
+      <input type="text" id="menu-search-input" placeholder="Search menu..." class="form-input" style="margin-bottom: 1.5rem;">
+      
+      <div style="display: flex; gap: 0.75rem; flex-wrap: wrap; justify-content: center;" id="category-filters">
+        <button class="lang-btn active-filter" onclick="filterMenu('all')">All</button>
+        <button class="lang-btn" onclick="filterMenu('Steak')">Steaks</button>
+        <button class="lang-btn" onclick="filterMenu('Seafood')">Seafood</button>
+      </div>
+    </div>
+
+    <div id="menu-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
+      </div>
+  </main>
+
+  <button id="back-to-top" aria-label="Back to top">↑</button>
+
+  <footer>
+    <div class="footer-bottom">
+      <p>&copy; 2026 Flame Steakhouse. All Rights Reserved.
+        <br><a href="https://www.facebook.com/share/1Lwmq1GfqW/" target="_blank">Developed by Codexa™</a>
+      </p>
+    </div>
+  </footer>
+
+  <script src="assets/js/script.js"></script>
+  <script>
+    // Specific script for Menu Grid Rendering
+    function renderMenuGrid(items = menuDatabase) {
+      const grid = document.getElementById('menu-grid');
+      if (!grid) return;
+
+      grid.innerHTML = items.map(item => `
+        <article class="glass-card">
+          <img src="${item.image}" alt="${item[`name_${currentLang}`]}" style="border-radius: var(--radius-sm); height: 200px; width: 100%; object-fit: cover; margin-bottom: 1rem;">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
+            <h3>${item[`name_${currentLang}`]}</h3>
+            <span style="color: var(--secondary); font-weight: 700;">$${item.price}</span>
+          </div>
+          <p style="color: var(--text-muted); font-size: 0.875rem; margin-bottom: 1.5rem;">${item[`description_${currentLang}`]}</p>
+          <a href="dish.html?id=${item.id}" class="btn-primary" style="width: 100%; justify-content: center;">View Dish</a>
+        </article>
+      `).join('');
+    }
+
+    function filterMenu(category) {
+      if (category === 'all') {
+        renderMenuGrid(menuDatabase);
+      } else {
+        const filtered = menuDatabase.filter(i => i.category === category);
+        renderMenuGrid(filtered);
+      }
+    }
+
+    document.getElementById('menu-search-input')?.addEventListener('input', (e) => {
+      const term = e.target.value.toLowerCase();
+      const filtered = menuDatabase.filter(i => 
+        i.name_en.toLowerCase().includes(term) || i.name_ar.includes(term)
+      );
+      renderMenuGrid(filtered);
+    });
+
+    document.addEventListener('DOMContentLoaded', () => renderMenuGrid());
+  </script>
+</body>
+</html>
