@@ -5,15 +5,19 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Contact Us | Flame Steakhouse</title>
   <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="icon" type="image/png" href="assets/imgs/icon.png">
 </head>
 <body>
 
   <div id="scroll-progress"></div>
 
   <header>
-    <nav class="navbar">
+    <nav class="navbar" id="navbar">
       <a href="index.html" class="nav-brand">FLAME<span>.</span></a>
-      <ul class="nav-links">
+      <button class="mobile-toggle" id="mobile-toggle" aria-label="Toggle Navigation">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links" id="nav-links">
         <li><a href="index.html" class="nav-link" data-i18n="nav_home">Home</a></li>
         <li><a href="about.html" class="nav-link" data-i18n="nav_about">About</a></li>
         <li><a href="contact.html" class="nav-link active" data-i18n="nav_contact">Contact</a></li>
@@ -22,13 +26,13 @@
     </nav>
   </header>
 
-  <main style="padding: 140px 5% 5rem;">
+  <main style="padding: 120px 5% 5rem;">
     <div class="section-title">
       <h4 data-i18n="nav_contact">Contact Us</h4>
       <h2>Get In Touch</h2>
     </div>
 
-    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2.5rem;">
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; max-width: 900px; margin: 0 auto;">
       <div class="glass-card">
         <h3 style="color: var(--secondary); margin-bottom: 1.5rem;">Information</h3>
         <p style="margin-bottom: 1rem;">📍 450 Fifth Avenue, New York, NY</p>

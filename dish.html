@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Dish Details | Flame Steakhouse</title>
   <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="icon" type="image/png" href="assets/imgs/icon.png">
 </head>
 <body>
 
@@ -13,7 +14,10 @@
   <header>
     <nav class="navbar" id="navbar">
       <a href="index.html" class="nav-brand">FLAME<span>.</span></a>
-      <ul class="nav-links">
+      <button class="mobile-toggle" id="mobile-toggle" aria-label="Toggle Navigation">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links" id="nav-links">
         <li><a href="index.html" class="nav-link" data-i18n="nav_home">Home</a></li>
         <li><a href="menu.html" class="nav-link" data-i18n="nav_menu">Menu</a></li>
         <li><a href="reservation.html" class="nav-link" data-i18n="nav_reservation">Reservation</a></li>
@@ -22,7 +26,7 @@
     </nav>
   </header>
 
-  <main style="padding: 140px 5% 5rem; max-width: 1000px; margin: 0 auto;" id="dish-detail-container">
+  <main style="padding: 120px 5% 5rem; max-width: 1000px; margin: 0 auto;" id="dish-detail-container">
     </main>
 
   <footer>
@@ -42,17 +46,17 @@
 
       const container = document.getElementById('dish-detail-container');
       container.innerHTML = `
-        <div class="glass-card" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 3rem; align-items: center;">
-          <img src="${item.image}" alt="${item.name_en}" style="width: 100%; border-radius: var(--radius-md); height: 400px; object-fit: cover;">
+        <div class="glass-card" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2.5rem; align-items: center;">
+          <img src="${item.image}" alt="${item.name_en}" style="width: 100%; border-radius: var(--radius-sm); height: 350px; object-fit: cover;">
           <div>
             <span style="color: var(--secondary); font-weight: 600;">${item.category}</span>
-            <h1 style="font-size: 2.5rem; margin: 0.5rem 0;">${item[`name_${currentLang}`]}</h1>
+            <h1 style="font-size: 2.2rem; margin: 0.5rem 0;">${item[`name_${currentLang}`]}</h1>
             <h2 style="color: var(--primary); margin-bottom: 1.5rem;">$${item.price}</h2>
             <p style="color: var(--text-muted); margin-bottom: 2rem;">${item[`description_${currentLang}`]}</p>
             
             <h3 style="margin-bottom: 1rem;">${currentLang === 'ar' ? 'المكونات الأساسية' : 'Ingredients'}</h3>
             <ul style="margin-bottom: 2rem; display: flex; flex-wrap: wrap; gap: 0.5rem;">
-              ${item[`ingredients_${currentLang}`].map(ing => `<li style="background: rgba(255,255,255,0.05); padding: 0.4rem 0.8rem; border-radius: 4px; font-size: 0.875rem;">${ing}</li>`).join('')}
+              ${item[`ingredients_${currentLang}`].map(ing => `<li style="background: rgba(255,255,255,0.05); padding: 0.4rem 0.8rem; border-radius: 4px; font-size: 0.85rem;">${ing}</li>`).join('')}
             </ul>
 
             <a href="reservation.html" class="btn-primary" data-i18n="btn_book">Book Table</a>

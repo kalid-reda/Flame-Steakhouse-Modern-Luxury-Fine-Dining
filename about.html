@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>About Us | Flame Steakhouse</title>
   <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="icon" type="image/png" href="assets/imgs/icon.png">
 </head>
 <body>
 
@@ -13,32 +14,33 @@
   <header>
     <nav class="navbar" id="navbar">
       <a href="index.html" class="nav-brand">FLAME<span>.</span></a>
-      <ul class="nav-links">
+      <button class="mobile-toggle" id="mobile-toggle" aria-label="Toggle Navigation">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links" id="nav-links">
         <li><a href="index.html" class="nav-link" data-i18n="nav_home">Home</a></li>
         <li><a href="about.html" class="nav-link active" data-i18n="nav_about">About</a></li>
         <li><a href="menu.html" class="nav-link" data-i18n="nav_menu">Menu</a></li>
         <li><a href="reservation.html" class="nav-link" data-i18n="nav_reservation">Reservation</a></li>
+        <li><a href="gallery.html" class="nav-link" data-i18n="nav_gallery">Gallery</a></li>
         <li><a href="contact.html" class="nav-link" data-i18n="nav_contact">Contact</a></li>
         <li><button id="lang-btn" class="lang-btn">العربية</button></li>
       </ul>
     </nav>
   </header>
 
-  <main style="padding: 140px 5% 5rem;">
+  <main style="padding: 120px 5% 5rem;">
     <div class="section-title">
-      <h4 data-i18n="nav_about">Our Story</h4>
-      <h2>A Culinary Tradition of Fire & Ember</h2>
+      <h4 data-i18n="sec_story_sub">OUR HERITAGE</h4>
+      <h2 data-i18n="sec_story_title">Crafting Perfection Since 2008</h2>
     </div>
 
-    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; margin-bottom: 4rem;">
-      <div class="glass-card">
-        <h3 style="color: var(--secondary); margin-bottom: 1rem;">Our Heritage</h3>
-        <p style="color: var(--text-muted);">Founded with a passion for dry-aging perfection and open-flame grilling, Flame Steakhouse serves the finest prime cuts crafted with culinary mastery.</p>
-      </div>
-
-      <div class="glass-card">
-        <h3 style="color: var(--secondary); margin-bottom: 1rem;">Our Promise</h3>
-        <p style="color: var(--text-muted);">Uncompromising quality, ethically sourced wagyu and prime meats, paired with a luxury dining ambiance designed for memorable moments.</p>
+    <div class="glass-card" style="max-width: 900px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2.5rem; align-items: center;">
+      <img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=800&q=80" style="width: 100%; border-radius: var(--radius-sm); height: 350px; object-fit: cover;">
+      <div>
+        <p style="color: var(--text-muted); margin-bottom: 1.5rem;" data-i18n="sec_story_desc1">At Flame Steakhouse, grilling isn't just a cooking method—it's an ancient ritual refined through modern techniques.</p>
+        <p style="color: var(--text-muted); margin-bottom: 2rem;" data-i18n="sec_story_desc2">Aged in our custom salt chambers for up to 60 days, our beef develops an extraordinary depth of flavor.</p>
+        <a href="reservation.html" class="btn-primary" data-i18n="btn_book">Book Table</a>
       </div>
     </div>
   </main>

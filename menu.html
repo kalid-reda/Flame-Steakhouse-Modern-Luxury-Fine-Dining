@@ -6,6 +6,7 @@
   <meta name="description" content="Explore the full menu of Flame Steakhouse - Prime Cuts, Seafood & Fine Desserts.">
   <title>Menu | Flame Steakhouse</title>
   <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="icon" type="image/png" href="assets/imgs/icon.png">
 </head>
 <body>
 
@@ -14,7 +15,14 @@
   <header>
     <nav class="navbar" id="navbar">
       <a href="index.html" class="nav-brand">FLAME<span>.</span></a>
-      <ul class="nav-links">
+      
+      <button class="mobile-toggle" id="mobile-toggle" aria-label="Toggle Navigation">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <ul class="nav-links" id="nav-links">
         <li><a href="index.html" class="nav-link" data-i18n="nav_home">Home</a></li>
         <li><a href="about.html" class="nav-link" data-i18n="nav_about">About</a></li>
         <li><a href="menu.html" class="nav-link active" data-i18n="nav_menu">Menu</a></li>
@@ -27,23 +35,23 @@
     </nav>
   </header>
 
-  <main style="padding: 140px 5% 5rem;">
+  <main style="padding: 120px 5% 5rem;">
     <div class="section-title">
       <h4 data-i18n="sec_highlights">Chef's Selection</h4>
       <h2 data-i18n="nav_menu">Our Full Menu</h2>
     </div>
 
-    <div style="max-width: 800px; margin: 0 auto 3rem;">
-      <input type="text" id="menu-search-input" placeholder="Search menu..." class="form-input" style="margin-bottom: 1.5rem;">
+    <div style="max-width: 700px; margin: 0 auto 3rem;">
+      <input type="text" id="menu-search-input" placeholder="Search menu..." class="form-input" style="margin-bottom: 1.25rem;">
       
-      <div style="display: flex; gap: 0.75rem; flex-wrap: wrap; justify-content: center;" id="category-filters">
-        <button class="lang-btn active-filter" onclick="filterMenu('all')">All</button>
+      <div style="display: flex; gap: 0.5rem; flex-wrap: wrap; justify-content: center;" id="category-filters">
+        <button class="lang-btn" onclick="filterMenu('all')">All</button>
         <button class="lang-btn" onclick="filterMenu('Steak')">Steaks</button>
         <button class="lang-btn" onclick="filterMenu('Seafood')">Seafood</button>
       </div>
     </div>
 
-    <div id="menu-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
+    <div id="menu-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem;">
       </div>
   </main>
 
@@ -59,7 +67,6 @@
 
   <script src="assets/js/script.js"></script>
   <script>
-    // Specific script for Menu Grid Rendering
     function renderMenuGrid(items = menuDatabase) {
       const grid = document.getElementById('menu-grid');
       if (!grid) return;

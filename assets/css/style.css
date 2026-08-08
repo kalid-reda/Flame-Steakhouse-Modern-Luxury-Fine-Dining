@@ -1,11 +1,10 @@
 /* ==========================================================================
-   FLAME STEAKHOUSE - PREMIUM DESIGN SYSTEM & RTL/LTR ENGINE
+   FLAME STEAKHOUSE - DESIGN SYSTEM & RESPONSIVE ENGINE
    ========================================================================== */
 
 @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&family=Poppins:wght@300;400;500;600;700;800&display=swap');
 
 :root {
-  /* Color Tokens */
   --primary: #D62828;
   --primary-hover: #B81D1D;
   --secondary: #F77F00;
@@ -17,11 +16,9 @@
   --text-muted: #B3B3B3;
   --star-color: #FFC107;
 
-  /* Typography */
   --font-en: 'Poppins', sans-serif;
   --font-ar: 'Cairo', sans-serif;
 
-  /* Geometry & Utilities */
   --nav-height: 80px;
   --radius-sm: 8px;
   --radius-md: 16px;
@@ -29,10 +26,8 @@
   --transition-fast: 0.2s cubic-bezier(0.4, 0, 0.2, 1);
   --transition-smooth: 0.4s cubic-bezier(0.16, 1, 0.3, 1);
   --shadow-glow: 0 10px 30px rgba(214, 40, 40, 0.25);
-  --shadow-card: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
 }
 
-/* Reset & Base */
 *, *::before, *::after {
   box-sizing: border-box;
   margin: 0;
@@ -71,7 +66,7 @@ img {
   display: block;
 }
 
-/* Progress Bar */
+/* Scroll Progress Bar */
 #scroll-progress {
   position: fixed;
   top: 0;
@@ -126,7 +121,6 @@ img {
 .nav-link {
   font-weight: 500;
   transition: var(--transition-fast);
-  position: relative;
 }
 
 .nav-link:hover, .nav-link.active {
@@ -170,7 +164,6 @@ img {
   border-color: var(--primary);
 }
 
-/* Glass Card Component */
 .glass-card {
   background: var(--glass-bg);
   backdrop-filter: blur(12px);
@@ -186,7 +179,6 @@ img {
   border-color: rgba(214, 40, 40, 0.4);
 }
 
-/* Utilities */
 .section-title {
   text-align: center;
   margin-bottom: 3rem;
@@ -220,7 +212,7 @@ img {
   border-color: var(--primary);
 }
 
-/* Lightbox & Modal */
+/* Modal Window */
 .modal-overlay {
   position: fixed;
   top: 0;
@@ -259,7 +251,7 @@ img {
   transform: scale(1);
 }
 
-/* Back to Top */
+/* Back To Top */
 #back-to-top {
   position: fixed;
   bottom: 30px;
@@ -290,7 +282,6 @@ img {
   left: 30px;
 }
 
-/* Footer */
 footer {
   background-color: #080808;
   padding: 4rem 5% 2rem;
@@ -303,4 +294,85 @@ footer {
   border-top: 1px solid rgba(255, 255, 255, 0.05);
   color: var(--text-muted);
   font-size: 0.875rem;
+}
+
+/* ==========================================================================
+   MOBILE OPTIMIZATION (RESPONSIVE)
+   ========================================================================== */
+
+.mobile-toggle {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 5px;
+}
+
+.mobile-toggle span {
+  width: 25px;
+  height: 2px;
+  background: var(--text-light);
+  transition: var(--transition-fast);
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    padding: 0 1.25rem;
+  }
+
+  .mobile-toggle {
+    display: flex;
+  }
+
+  .nav-links {
+    position: fixed;
+    top: var(--nav-height);
+    left: 0;
+    width: 100%;
+    background: rgba(15, 15, 15, 0.98);
+    backdrop-filter: blur(20px);
+    flex-direction: column;
+    padding: 2rem 1.5rem;
+    gap: 1.25rem;
+    border-bottom: 1px solid var(--glass-border);
+    transform: translateY(-150%);
+    transition: var(--transition-smooth);
+  }
+
+  .nav-links.active {
+    transform: translateY(0);
+  }
+
+  section {
+    padding: 4rem 1.25rem !important;
+  }
+
+  h1 {
+    font-size: 2.2rem !important;
+    line-height: 1.2 !important;
+  }
+
+  h2 {
+    font-size: 1.8rem !important;
+  }
+
+  p {
+    font-size: 0.95rem !important;
+  }
+
+  .btn-primary {
+    width: 100%;
+    justify-content: center;
+    padding: 0.85rem 1.25rem;
+  }
+
+  .glass-card {
+    padding: 1.25rem;
+  }
+
+  [dir="rtl"] .nav-links {
+    text-align: right;
+  }
 }

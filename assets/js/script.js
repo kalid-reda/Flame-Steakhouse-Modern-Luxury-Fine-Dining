@@ -1,8 +1,7 @@
 /* ==========================================================================
-   FLAME STEAKHOUSE - CORE JS ENGINE (i18n, INTERACTION & DATABASE)
+   FLAME STEAKHOUSE - CORE JS ENGINE
    ========================================================================== */
 
-// 1. DATABASE STRUCTURE
 const menuDatabase = [
   {
     id: "wagyu-steak",
@@ -48,7 +47,6 @@ const menuDatabase = [
   }
 ];
 
-// 2. i18n TRANSLATIONS DICTIONARY
 const translations = {
   en: {
     nav_home: "Home",
@@ -146,7 +144,6 @@ const translations = {
 
 let currentLang = localStorage.getItem('flame_lang') || 'en';
 
-// 3. CHANGE LANGUAGE ENGINE
 function setLanguage(lang) {
   currentLang = lang;
   localStorage.setItem('flame_lang', lang);
@@ -164,13 +161,11 @@ function setLanguage(lang) {
   const langBtn = document.getElementById('lang-btn');
   if (langBtn) langBtn.textContent = translations[lang].lang_btn;
 
-  // Render menu dynamically if the grid exists on the page
   if (typeof renderMenuGrid === 'function' && document.getElementById('menu-grid')) {
     renderMenuGrid();
   }
 }
 
-// 4. CUSTOM MODAL SYSTEM (No alert())
 function showModal(title, message) {
   const overlay = document.createElement('div');
   overlay.className = 'modal-overlay';
@@ -191,11 +186,9 @@ function showModal(title, message) {
   });
 }
 
-// 5. DOM LOADED INITIALIZATION
 document.addEventListener('DOMContentLoaded', () => {
   setLanguage(currentLang);
 
-  // Language Button Event Listener
   const langBtn = document.getElementById('lang-btn');
   if (langBtn) {
     langBtn.addEventListener('click', () => {
@@ -203,7 +196,23 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // Scroll Actions: Navbar background & Progress bar
+  // Mobile Menu Logic
+  const mobileToggle = document.getElementById('mobile-toggle');
+  const navLinks = document.getElementById('nav-links');
+
+  if (mobileToggle && navLinks) {
+    mobileToggle.addEventListener('click', () => {
+      navLinks.classList.toggle('active');
+    });
+
+    document.querySelectorAll('.nav-link').forEach(link => {
+      link.addEventListener('click', () => {
+        navLinks.classList.remove('active');
+      });
+    });
+  }
+
+  // Scroll Progress & Navbar Effect
   window.addEventListener('scroll', () => {
     const progress = document.getElementById('scroll-progress');
     const navbar = document.getElementById('navbar');
@@ -221,7 +230,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  // Back To Top Click Handler
   const backTopBtn = document.getElementById('back-to-top');
   if (backTopBtn) {
     backTopBtn.addEventListener('click', () => {
@@ -229,7 +237,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // Reservation Form Handler
   const resForm = document.getElementById('reservation-form');
   if (resForm) {
     resForm.addEventListener('submit', (e) => {

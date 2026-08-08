@@ -3,8 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Book Table | Flame Steakhouse</title>
+  <title>Reservation | Flame Steakhouse</title>
   <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="icon" type="image/png" href="assets/imgs/icon.png">
 </head>
 <body>
 
@@ -13,7 +14,10 @@
   <header>
     <nav class="navbar" id="navbar">
       <a href="index.html" class="nav-brand">FLAME<span>.</span></a>
-      <ul class="nav-links">
+      <button class="mobile-toggle" id="mobile-toggle" aria-label="Toggle Navigation">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links" id="nav-links">
         <li><a href="index.html" class="nav-link" data-i18n="nav_home">Home</a></li>
         <li><a href="about.html" class="nav-link" data-i18n="nav_about">About</a></li>
         <li><a href="menu.html" class="nav-link" data-i18n="nav_menu">Menu</a></li>
@@ -25,42 +29,52 @@
     </nav>
   </header>
 
-  <main style="padding: 140px 5% 5rem; max-width: 800px; margin: 0 auto;">
+  <main style="padding: 120px 5% 5rem; max-width: 700px; margin: 0 auto;">
     <div class="section-title">
-      <h4 data-i18n="res_title">Table Reservation</h4>
-      <h2 data-i18n="res_subtitle">Reserve Your Fine Dining Experience</h2>
+      <h4 data-i18n="nav_reservation">BOOK A TABLE</h4>
+      <h2>Reserve Your Fine Dining Experience</h2>
     </div>
 
-    <form class="glass-card" id="reservation-form">
-      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1rem; margin-bottom: 1rem;">
+    <form class="glass-card" id="reservation-form" style="display: flex; flex-direction: column; gap: 1.25rem;">
+      <div>
+        <label style="display: block; margin-bottom: 0.5rem; font-size: 0.875rem;">Full Name</label>
+        <input type="text" class="form-input" required placeholder="John Doe">
+      </div>
+      
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem;">
         <div>
-          <label style="color: var(--text-muted); font-size: 0.9rem;" data-i18n="lbl_name">Full Name</label>
-          <input type="text" class="form-input" required>
+          <label style="display: block; margin-bottom: 0.5rem; font-size: 0.875rem;">Email</label>
+          <input type="email" class="form-input" required placeholder="john@example.com">
         </div>
         <div>
-          <label style="color: var(--text-muted); font-size: 0.9rem;" data-i18n="lbl_email">Email Address</label>
-          <input type="email" class="form-input" required>
-        </div>
-        <div>
-          <label style="color: var(--text-muted); font-size: 0.9rem;" data-i18n="lbl_phone">Phone Number</label>
-          <input type="tel" class="form-input" required>
-        </div>
-        <div>
-          <label style="color: var(--text-muted); font-size: 0.9rem;" data-i18n="lbl_date">Reservation Date</label>
-          <input type="date" class="form-input" required style="color-scheme: dark;">
+          <label style="display: block; margin-bottom: 0.5rem; font-size: 0.875rem;">Phone Number</label>
+          <input type="tel" class="form-input" required placeholder="+1 (555) 000-0000">
         </div>
       </div>
 
-      <div style="margin-bottom: 1.5rem;">
-        <label style="color: var(--text-muted); font-size: 0.9rem;" data-i18n="lbl_notes">Special Requests</label>
-        <textarea rows="4" class="form-input"></textarea>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 1rem;">
+        <div>
+          <label style="display: block; margin-bottom: 0.5rem; font-size: 0.875rem;">Guests</label>
+          <select class="form-input" style="background: var(--card-bg);">
+            <option>1 Person</option>
+            <option selected>2 Persons</option>
+            <option>4 Persons</option>
+            <option>6+ Persons</option>
+          </select>
+        </div>
+        <div>
+          <label style="display: block; margin-bottom: 0.5rem; font-size: 0.875rem;">Date</label>
+          <input type="date" class="form-input" required>
+        </div>
+        <div>
+          <label style="display: block; margin-bottom: 0.5rem; font-size: 0.875rem;">Time</label>
+          <input type="time" class="form-input" required>
+        </div>
       </div>
 
-      <button type="submit" class="btn-primary" style="width: 100%; justify-content: center;" data-i18n="btn_confirm">Confirm Reservation</button>
+      <button type="submit" class="btn-primary" style="margin-top: 1rem; width: 100%; justify-content: center;" data-i18n="btn_book">Book Table</button>
     </form>
   </main>
-
-  <button id="back-to-top" aria-label="Back to top">↑</button>
 
   <footer>
     <div class="footer-bottom">
